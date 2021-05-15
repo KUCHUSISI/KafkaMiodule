@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.uvik.kafka'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.4.5'
+implementation group: 'org.codehaus.jettison', name: 'jettison', version: '1.4.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+		testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+	testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
+	implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.8.0'
+	
+		compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	
+}
+
+test {
+	useJUnitPlatform()
+}
